@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 
 const BackButton = () => {
-     const navigation=useNavigation();
+    const navigation = useNavigation();
     return (
         <TouchableOpacity onPress={navigation.goBack}
             className="rounded-full bg-white h-10 w-10 p-1">
@@ -13,4 +13,4 @@ const BackButton = () => {
     )
 }
 
-export default BackButton
+export default BackButton;

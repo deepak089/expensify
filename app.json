@@ -4,10 +4,10 @@
     "slug": "expense",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/react-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/react-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,9 +20,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "buildIdentifier":"com.expo.one",
+        "buildNumber":"1.0.0"
       },
-      "package": "com.expo.one"
+      "package": "com.expo.one",
+      "versionCode":"1"
     },
     "web": {
       "favicon": "./assets/favicon.png"

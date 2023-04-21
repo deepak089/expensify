@@ -19,7 +19,7 @@ const ForgetPasswordScreen = () => {
                     navigation.goBack();
                 }, 2000);
             }).catch((error) => {
-                alert(error);
+                alert('Something went wrong...!');
             })
         } else {
             alert('Something went Wrong...!');
