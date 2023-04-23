@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 const WelcomeScreen = () => {
   const navigation = useNavigation();
   return (
-    <SafeAreaView className="pt-16">
+    <SafeAreaView>
       <View className="h-full flex justify-around">
         <View className="flex-row justify-center mt-10">
           <Image  

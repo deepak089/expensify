@@ -6,12 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 import BackButton from '../component/BackButton';
 import { setUserLoading } from '../redux/Slices/UserSlice';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, updateDoc } from 'firebase/firestore';
 import { tripRef } from '../config/firebase';
 import { useSelector } from 'react-redux';
-import { ALERT_TYPE, Toast } from 'react-native-alert-notification';
 
-const AddTripScreen = () => {
+const AddTripScreen = (props) => {
 
     const [place, setPlace] = useState('');
     const [country, setCountry] = useState('');
@@ -39,12 +38,12 @@ const AddTripScreen = () => {
             }
         } else {
             //show Error
-            alert('Something went Wrong...!')
+            alert('Something went Wrong...!');
         }
     }
 
     return (
-        <SafeAreaView className="pt-16">
+        <SafeAreaView>
             <View className="flex justify-between h-full mx-4">
                 <View className="mb-20">
 
@@ -77,7 +76,7 @@ const AddTripScreen = () => {
 
                 <View>
                     <TouchableOpacity onPress={handleAddTrip} className="bg-[#00CCBB] my-6 rounded-full p-3 shadow-sm mx-2">
-                        <Text className="text-center  text-white text-lg font-bold">Add Trip</Text>
+                        <Text className="text-center  text-white text-lg     font-bold">Add Trip</Text>
                     </TouchableOpacity>
                 </View>
             </View>

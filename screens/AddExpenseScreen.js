@@ -48,7 +48,7 @@ const AddExpenseScreen = (props) => {
     }
   }
   return (
-    <SafeAreaView className="pt-16">
+    <SafeAreaView>
       <View className="flex justify-between h-full mx-4">
         <View className="mb-20">
 
