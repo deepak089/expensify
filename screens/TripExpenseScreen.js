@@ -36,7 +36,7 @@ const TripExpenseScreen = (props) => {
     }, [isFocused]);
 
     return (
-        <SafeAreaView className='pt-16'>
+        <SafeAreaView> 
             <View className="relative mt-5 mx-4">
                 <View className="absolute top-2 left-0">
                     <BackButton />

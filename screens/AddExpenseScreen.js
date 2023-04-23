@@ -1,6 +1,5 @@
 import { SafeAreaView, StyleSheet, Text, TextInput, Touchable, View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
-import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
