@@ -33,7 +33,7 @@ const SignupScreen = () => {
         }
     }
     return (
-        <SafeAreaView className="pt-12">
+        <SafeAreaView >
             <KeyboardAvoidingView className="flex justify-between h-full mx-4">
                 <View className="mb-20">
 
@@ -47,7 +47,7 @@ const SignupScreen = () => {
                     </View>
 
                     <View className="flex-row justify-center my-3 mt-12">
-                        <Image className="h-96 w-96"
+                        <Image className="h-48 w-96"
                             source={require('../assets/signup.png')}
                         />
                     </View>

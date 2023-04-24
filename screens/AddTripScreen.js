@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, TextInput, Touchable, View } from 'react-native'
+import { KeyboardAvoidingView, SafeAreaView, StyleSheet, Text, TextInput, Touchable, View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { TouchableOpacity } from 'react-native';
@@ -43,44 +43,47 @@ const AddTripScreen = (props) => {
     }
 
     return (
-        <SafeAreaView>
-            <View className="flex justify-between h-full mx-4">
-                <View className="mb-20">
 
-                    <View className="relative mt-5">
-                        <View className="absolute top-0 left-0">
-                            <BackButton />
+        <KeyboardAvoidingView>
+            <SafeAreaView>
+                <View className="flex justify-between h-full mx-4">
+                    <View className="mb-20">
+
+                        <View className="relative mt-5">
+                            <View className="absolute top-0 left-0">
+                                <BackButton />
+                            </View>
+                            <Text className="text-gray-600 font-bold text-3xl shadow-sm text-center">
+                                Add Trips
+                            </Text>
                         </View>
-                        <Text className="text-gray-600 font-bold text-3xl shadow-sm text-center">
-                            Add Trips
+
+                        <View className="flex-row justify-center my-3 mt-12">
+                            <Image className="h-48 w-96"
+                                source={require('../assets/add.png')}
+                            />
+                        </View>
+                    </View>
+
+                    <View className="space-y-2 mx-2">
+                        <Text className="text-gray-600 text-lg font-bold">
+                            Where On  Earth
                         </Text>
+                        <TextInput value={place} onChangeText={value => setPlace(value)} className="p-4 bg-white rounded-full mb-3" />
+                        <Text className="text-gray-600 text-lg font-bold">
+                            Which Country
+                        </Text>
+                        <TextInput value={country} onChangeText={value => setCountry(value)} className="p-4 bg-white rounded-full mb-3" />
                     </View>
 
-                    <View className="flex-row justify-center my-3 mt-12">
-                        <Image className="h-96 w-96"
-                            source={require('../assets/add.png')}
-                        />
+                    <View>
+                        <TouchableOpacity onPress={handleAddTrip} className="bg-[#00CCBB] my-6 rounded-full p-3 shadow-sm mx-2">
+                            <Text className="text-center  text-white text-lg     font-bold">Add Trip</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
-
-                <View className="space-y-2 mx-2">
-                    <Text className="text-gray-600 text-lg font-bold">
-                        Where On  Earth
-                    </Text>
-                    <TextInput value={place} onChangeText={value => setPlace(value)} className="p-4 bg-white rounded-full mb-3" />
-                    <Text className="text-gray-600 text-lg font-bold">
-                        Which Country
-                    </Text>
-                    <TextInput value={country} onChangeText={value => setCountry(value)} className="p-4 bg-white rounded-full mb-3" />
-                </View>
-
-                <View>
-                    <TouchableOpacity onPress={handleAddTrip} className="bg-[#00CCBB] my-6 rounded-full p-3 shadow-sm mx-2">
-                        <Text className="text-center  text-white text-lg     font-bold">Add Trip</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </SafeAreaView>
+            </SafeAreaView>
+            </KeyboardAvoidingView>
     )
 }
 

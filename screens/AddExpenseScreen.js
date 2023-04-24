@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, TextInput, Touchable, View } from 'react-native'
+import { KeyboardAvoidingView, SafeAreaView, StyleSheet, Text, TextInput, Touchable, View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -47,63 +47,65 @@ const AddExpenseScreen = (props) => {
     }
   }
   return (
-    <SafeAreaView>
-      <View className="flex justify-between h-full mx-4">
-        <View className="mb-20">
+    <KeyboardAvoidingView>
+      <SafeAreaView>
+        <View className="flex justify-between h-full mx-4">
+          <View className="mb-20">
 
-          <View className="relative mt-5">
-            <View className="absolute top-0 left-0">
-              <BackButton />
+            <View className="relative mt-5">
+              <View className="absolute top-0 left-0">
+                <BackButton />
+              </View>
+              <Text className="text-gray-600 font-bold text-3xl shadow-sm text-center">
+                Add Expense
+              </Text>
             </View>
-            <Text className="text-gray-600 font-bold text-3xl shadow-sm text-center">
-              Add Expense
+
+            <View className="flex-row justify-center my-3 mt-12">
+              <Image className="h-48 w-96"
+                source={require('../assets/expense.png')}
+              />
+            </View>
+          </View>
+
+          <View className="space-y-2 mx-2">
+            <Text className="text-gray-600 text-lg font-bold">
+              For What?
             </Text>
-          </View>
+            <TextInput value={title} onChangeText={value => setTitle(value)} className="p-4 bg-white rounded-full mb-3" />
+            <Text className="text-gray-600 text-lg font-bold">
+              How Much
+            </Text>
 
-          <View className="flex-row justify-center my-3 mt-12">
-            <Image className="h-96 w-96"
-              source={require('../assets/expense.png')}
-            />
-          </View>
-        </View>
+            <TextInput value={amount} onChangeText={value => setAmount(value)} className="p-4 bg-white rounded-full mb-3" />
+            <View className="mx-2 space-x-2">
+              <Text className="text-lg font-bold">Category</Text>
+              <View className="flex-row flex-wrap items-center">
+                {
+                  categories.map((cat) => {
+                    let bgColor = 'bg-white';
+                    if (cat.value === category) { bgColor = 'bg-green-200' };
 
-        <View className="space-y-2 mx-2">
-          <Text className="text-gray-600 text-lg font-bold">
-            For What?
-          </Text>
-          <TextInput value={title} onChangeText={value => setTitle(value)} className="p-4 bg-white rounded-full mb-3" />
-          <Text className="text-gray-600 text-lg font-bold">
-            How Much
-          </Text>
-
-          <TextInput value={amount} onChangeText={value => setAmount(value)} className="p-4 bg-white rounded-full mb-3" />
-          <View className="mx-2 space-x-2">
-            <Text className="text-lg font-bold">Category</Text>
-            <View className="flex-row flex-wrap items-center">
-              {
-                categories.map((cat) => {
-                  let bgColor = 'bg-white';
-                  if (cat.value === category) { bgColor = 'bg-green-200' };
-
-                  return (<TouchableOpacity
-                    onPress={() => setcategory(cat.value)}
-                    key={cat.value}
-                    className={`rounded-full ${bgColor} px-4 p-3 mb-2 mr-2`} >
-                    <Text>{cat.title}</Text>
-                  </TouchableOpacity>)
-                })
-              }
+                    return (<TouchableOpacity
+                      onPress={() => setcategory(cat.value)}
+                      key={cat.value}
+                      className={`rounded-full ${bgColor} px-4 p-3 mb-2 mr-2`} >
+                      <Text>{cat.title}</Text>
+                    </TouchableOpacity>)
+                  })
+                }
+              </View>
             </View>
           </View>
-        </View>
 
-        <View>
-          <TouchableOpacity onPress={handleAddExpense} className="bg-[#00CCBB] my-6 rounded-full p-3 shadow-sm mx-2">
-            <Text className="text-center text-white text-lg font-bold">Add Expense</Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity onPress={handleAddExpense} className="bg-[#00CCBB] my-6 rounded-full p-3 shadow-sm mx-2">
+              <Text className="text-center text-white text-lg font-bold">Add Expense</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView> </KeyboardAvoidingView>
+
   )
 }
 

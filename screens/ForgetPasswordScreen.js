@@ -26,7 +26,7 @@ const ForgetPasswordScreen = () => {
         }
     }
     return (
-        <KeyboardAvoidingView className="pt-12">
+        <KeyboardAvoidingView >
             <View className="flex justify-between h-full mx-4">
                 <View className="mb-20">
 
@@ -40,7 +40,7 @@ const ForgetPasswordScreen = () => {
                     </View>
 
                     <View className="flex-row justify-center my-3 mt-12">
-                        <Image className="h-96 w-96"
+                        <Image className="h-48 w-96"
                             source={require('../assets/forget.png')}
                         />
                     </View>

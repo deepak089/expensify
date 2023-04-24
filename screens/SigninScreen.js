@@ -29,7 +29,7 @@ const SigninScreen = () => {
             // go to home 
             try {
                 dispatch(setUserLoading(true));
-                
+
                 await signInWithEmailAndPassword(auth, email, password);
                 dispatch(setUserLoading(false));
             } catch (error) {
@@ -44,8 +44,8 @@ const SigninScreen = () => {
     }
 
     return (
-        <KeyboardAvoidingView>
-            <SafeAreaView className="pt-12">
+        <SafeAreaView >
+            <KeyboardAvoidingView className="flex justify-between h-full mx-4">
                 <View className="flex justify-between h-full mx-4">
                     <View className="mb-20">
                         <View className="relative mt-5">
@@ -91,9 +91,8 @@ const SigninScreen = () => {
 
                     </View>
                 </View>
-            </SafeAreaView>
-        </KeyboardAvoidingView>
-
+            </KeyboardAvoidingView>
+        </SafeAreaView>
     )
 }
 
