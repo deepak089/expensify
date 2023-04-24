@@ -21,11 +21,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff",
-        "buildIdentifier":"com.expo.one",
-        "buildNumber":"1.0.0"
+        "buildIdentifier": "com.expo.one",
+        "buildNumber": "1.0.0"
       },
       "package": "com.expo.one",
-      "versionCode":"1"
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -34,6 +34,12 @@
       "eas": {
         "projectId": "09a966fb-98fd-4cf0-bb48-bc02f540551d"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/09a966fb-98fd-4cf0-bb48-bc02f540551d"
     }
   }
 }
